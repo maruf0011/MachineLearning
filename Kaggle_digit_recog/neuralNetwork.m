@@ -1,4 +1,3 @@
-%% Machine Learning Online Class - Exercise 4 Neural Network Learning
 
 %  Instructions
 %  ------------
@@ -29,11 +28,6 @@ num_labels = 10;          % 10 labels, from 1 to 10
 %  You will be working with a dataset that contains handwritten digits.
 %
 
-% Load Training Data
-fprintf('Loading and Visualizing Data ...\n')
-
-%load('ex4data1.mat');
-
 X = csvread('train.csv');
 y = X(: , 1);
 X = X(:, 2:end);
@@ -52,7 +46,7 @@ y = y+(10*idx);
 
 %%%%----------------------------------Check area---------------------------------------------------------
 
-% Randomly select 100 data points to display
+% Randomly select 100 data points
 sel = randperm(size(X, 1));
 sel = sel(1:100);
 
@@ -88,7 +82,7 @@ fprintf('\nTraining Neural Network... \n')
 
 %  After you have completed the assignment, change the MaxIter to a larger
 %  value to see how more training helps.
-options = optimset( 'MaxIter', 1000);
+options = optimset( 'MaxIter', 2);
 
 %  You should also try different values of lambda
 lambda = 2;
